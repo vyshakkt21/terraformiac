@@ -30,7 +30,7 @@ resource "azurerm_linux_virtual_machine" "web_linuxvm" {
   network_interface_ids = [ azurerm_network_interface.web_linuxvm_nic.id ]
   admin_ssh_key {
     username = var.web_linuxvm_admin_user
-    public_key = file("${path.module}/ssh-keys/terraform-azure.pub")
+    public_key = file("${path.module}/ssh/terraform-azure.pub")
   }
   os_disk {
     caching = "ReadWrite"
